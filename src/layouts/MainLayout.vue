@@ -12,6 +12,9 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink class="hover:text-blue-600" to="/packing">Packing</RouterLink>
           <RouterLink class="hover:text-blue-600" to="/shipping">Shipping</RouterLink>
           <RouterLink class="hover:text-blue-600" to="/settings">Settings</RouterLink>
+
+          <RouterLink class="hover:text-blue-600" to="/import">Import</RouterLink>
+          <RouterLink class="hover:text-blue-600" to="/pallets">Pallets</RouterLink>
         </nav>
       </div>
     </header>

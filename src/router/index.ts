@@ -7,6 +7,16 @@ const routes: RouteRecordRaw[] = [
   { path: '/shipping', name: 'Shipping', component: () => import('@/pages/Shipping.vue') },
   { path: '/settings', name: 'Settings', component: () => import('@/pages/Settings.vue') },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/pages/NotFound.vue') },
+  { path: '/import', name: 'Import', component: () => import('@/pages/Import.vue') },
+
+  { path: '/pallets', name: 'Pallets', component: () => import('@/pages/Pallets.vue') },
+  {
+    path: '/pallets/:palletNo',
+    name: 'PalletDetail',
+    component: () => import('@/pages/PalletDetail.vue'),
+  },
+
+  { path: '/import', name: 'Import', component: () => import('@/pages/Import.vue') },
 ]
 
 export default createRouter({
