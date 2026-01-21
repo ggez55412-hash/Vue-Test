@@ -4,6 +4,17 @@ import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useImportStore } from '@/stores/importStore'
 import { fmtNum } from '@/utils/format'
+import { onMounted } from 'vue'
+import { useSettingsStore } from '@/stores/settingsStore'
+
+const stores = useImportStore()
+const settings = useSettingsStore()
+
+onMounted(() => {
+  settings.hydrate()
+  if (!stores.summary || stores.clean.length === 0) stores.rehydrate()
+})
+
 
 type PalletEntry = {
   palletNo: string

@@ -138,6 +138,20 @@ export const useImportStore = defineStore('import', {
         totalWeightKg,
         types,
       }
-    },
-  },
-})
+        localStorage.setItem('import.clean', JSON.stringify(this.clean))
+        localStorage.setItem('import.summary', JSON.stringify(this.summary))
+
+      },
+
+rehydrate() {
+  try {
+    const rawClean = localStorage.getItem('import.clean')
+    const rawSum = localStorage.getItem('import.summary')
+    if (rawClean) this.clean = JSON.parse(rawClean)
+    if (rawSum) this.summary = JSON.parse(rawSum)
+  } catch { /* noop */ }
+}
+
+   },
+ }
+)
